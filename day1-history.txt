@@ -181,3 +181,155 @@ git clone https://github.com/mariano-italiano/lin2_Apr2024.git
 sudo dnf install git -y
 git clone https://github.com/mariano-italiano/lin2_Apr2024.git
 history | awk '$1 > 28' | cut -c 8- > lin2_Apr2024/day1-history.txt
+cd lin2_Apr2024/;git status
+git add .
+git config --global credential.helper store 
+git commit -m "ADding day1 history file"
+git config --global user.name mariano-italiano
+git commit -m "ADding day1 history file"
+git config --global user.email markuj5@gmail.com
+git commit -m "ADding day1 history file"
+git push
+cd
+nmap 192.168.1.0/24
+sudo dnf install nmap -y
+nmap 192.168.1.0/24
+nmap 192.168.1.150/32
+nmap 192.168.1.90/32
+ethtool -S ens33 
+ip -s link
+tcpdump -i ens33 
+sudo tcpdump -i ens33 
+sudo tcpdump -i ens33 tcp port 22
+sudo tcpdump -i ens33 src 192.168.1.1
+sudo tcpdump -i ens33 src 192.168.1.1 -w traffix.pcap 
+ls -la
+sudo dnf install -y wiresharl
+sudo dnf install -y wireshark
+tcpdump --help
+man tcpdump
+sudo tcpdump -i ens33 udp port 53
+iostat
+sudo dnf install iostat
+sudo dnf provides iostat
+sudo dnf install sysstat
+iostat 
+vmstat 
+vmstat 7
+vmstat 2
+top
+htop
+sdo dnf install htop
+sudo dnf install htop
+sudo dnf repolist
+sudo dnf install epel-release
+sudo dnf install htop
+htop
+free -m
+cat /proc/meminfo 
+cat /proc/cpuinfo 
+less /var/log/messages 
+sudo less /var/log/messages 
+cd /var/log/
+ls -la
+less kdump.log
+sudo less kdump.log
+dmesg -w
+ls -la
+less secure 
+sudo less secure 
+sudo less dnf.log
+lastlog 
+ls -la 
+lsof lastlog
+less lastlog
+file lastlog 
+file secure 
+sudo file secure 
+sudo file lastlog 
+cd
+sudo systemctl status tuned
+sudo systemctl start tuned
+sudo systemctl status tuned
+tuned-adm  list
+tuned-adm profile_info aws
+tuned-adm profile balanced
+sudo tuned-adm profile balanced
+tuned-adm active 
+tuned-adm recommend 
+sudo tuned-adm profile virtual-guest
+sysctl -a
+sysctl -a > /tmp/virtual
+sudo sysctl -a > /tmp/virtual
+sudo tuned-adm profile balanced
+sudo sysctl -a > /tmp/balanced
+diff /tmp/balanced /tmp/virtual
+sudo tuned-adm profile powersave 
+sudo sysctl -a > /tmp/power
+diff /tmp/balanced /tmp/power 
+sudo tuned-adm profile virtual-guest
+sudo dnf install atop
+atop
+sudo dnf install stress-ng -y
+stress-ng --help
+stress-ng --cpu 8 --iomix 4 --vm 2 --vm-bytes 128M --fork 4 --timeout 60s
+htop
+stress-ng --cpu 8 --iomix 4 --vm 2 --vm-bytes 128M --fork 4 --timeout 60s
+ls -la /lib/systemd/system/
+ls -la /lib/systemd/system/runlevel*.target
+init 3
+sudo init 3
+sudo init 5
+sudo systemctl isolate 3
+sudo systemctl isolate multi-user.target 
+sudo systemctl isolate graphical.target 
+sudo systemctl get-default 
+sudo systemctl set-default multi-user.target 
+systemctl list-units
+systemctl list-units --type target
+systemctl list-units --type target --all
+systemctl --help
+systemctl --list-unit-files
+systemctl list-unit-files
+systemctl list-unit-files --status=enabled
+systemctl list-unit-files
+systemctl list-unit-files -h
+systemctl list-unit-files is-enabled 
+systemctl list-unit-files | grep enabled
+systemctl list-unit-files --state=running
+sudo systemctl list-unit-files --state=running
+sudo systemctl list-unit-files --state=enabled
+systemctl status wires
+sudo systemctl status wireshark
+sudo systemctl status sshd
+systemctl status chronyd
+sudo systemctl disable chronyd
+ls -la /etc/systemd/system/multi-user.target.wants/
+ls -la /etc/systemd/system/graphical.target.wants/
+systemctl status chronyd
+sudo systemctl stop chronyd
+systemctl status chronyd
+sudo systemctl enable --now chronyd
+systemctl status chronyd
+cd /usr/lib/systemd/system-preset/
+ls -la
+vi 90-epel.preset
+vi 90-default.preset 
+cd ..
+cd
+cp -rp /lib/systemd/system/sshd.service /etc/systemd/system/web1.service
+sudo cp -rp /lib/systemd/system/sshd.service /etc/systemd/system/web1.service
+sudo vi /etc/systemd/system/web1.service
+sudo yum remove docker                   docker-client                   docker-client-latest                   docker-common                   docker-latest                   docker-latest-logrotate                   docker-logrotate                   docker-engine
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+docker ps
+sudo systemctl status docker.s
+sudo systemctl status docker.service 
+sudo systemctl enable --now docker.service 
+sudo systemctl status docker.service 
+docker ps\
+docker ps
+history
+history | awk '$1 > 28' | cut -c 8- > lin2_Apr2024/day1-history.txt
