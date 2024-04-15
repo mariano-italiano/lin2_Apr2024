@@ -333,3 +333,74 @@ docker ps\
 docker ps
 history
 history | awk '$1 > 28' | cut -c 8- > lin2_Apr2024/day1-history.txt
+docker ps
+docker ps
+docker ps -a
+docker run -d --name web1 -p 80:80 nginx
+docker ps
+ip a
+docker stop web1
+docker ps
+docker ps -a
+sudo vi /etc/systemd/system/web1.service
+which docker
+sudo vi /etc/systemd/system/web1.service
+sudo systemctl status web1.service
+sudo systemctl daemon-reload
+sudo systemctl status web1.service
+sudo systemctl enable --now web1.service
+sudo systemctl status web1.service
+sudo systemctl stop web1
+sudo systemctl status web1.service
+sudo systemctl enable --now web1.service
+sudo systemctl status web1.service
+vi monitor.sh
+chmod +x monitor.sh
+vi /tmp/script.sh
+logger "Uruchomilem skrypt bo plik /tmp/file istnieje"
+sudo less /var/log/messages
+chmod +x /tmp/script.sh
+cp -rp /etc/systemd/system/web1.service /etc/systemd/system/monitorFile.service
+sudo cp -rp /etc/systemd/system/web1.service /etc/systemd/system/monitorFile.service
+sudo vi /etc/systemd/system/monitorFile.service
+vi /lib/systemd/system/sshd.service
+sudo vi /etc/systemd/system/monitorFile.service
+vi monitor.sh
+cp -rp monitor.sh monitorSystemd.sh
+vi monitor
+vi monitor.sh
+vi monitorSystemd.sh
+vi monitor.sh
+sudo vi /etc/systemd/system/monitorFile.service
+chmod +x monitor*
+sudo systemctl daemon-reload
+sudo systemctl status monitorFile.service
+sudo systemctl start monitorFile.service
+sudo systemctl status monitorFile.service
+vi monitor.sh
+cat monitor.sh
+sudo vi /etc/systemd/system/monitorFile.service
+vi monitorSystemd.sh
+sudo systemctl daemon-reload
+sudo systemctl status monitorFile.service
+sudo systemctl start monitorFile.service
+sudo systemctl status monitorFile.service
+tail -f /var/log/messages
+sudo tail -f /var/log/messages
+touch /tmp/file
+vi monitorSystemd.sh
+sudo systemctl status monitorFile.service
+sudo systemctl stop monitorFile.service
+sudo systemctl status monitorFile.service
+sudo systemctl daemon-reload
+sudo systemctl start monitorFile.service
+sudo systemctl status monitorFile.service
+rm /tmp/file
+sudo systemctl start monitorFile.service
+sudo systemctl status monitorFile.service
+touch /tmp/plik
+sudo systemctl status monitorFile.service
+sudo watch -n1 systemctl status monitorFile.service
+touch /tmp/file
+sudo systemctl status monitorFile.service
+sudo watch -n1 systemctl status monitorFile.service
