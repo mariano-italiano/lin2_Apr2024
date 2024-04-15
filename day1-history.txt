@@ -1,0 +1,183 @@
+cat /etc/redhat-release > my_release
+cat my_release
+ls -la > my_release
+less my_release
+cat /etc/redhat-release >> my_release
+less my_release
+cat my_release | sort
+sort < my_release 
+ls -la 1> my_release
+vi my_release
+ls -la
+ls -la /root
+ls -la /root 2> error
+less error 
+echo "To jest przyklad" | sed -n '/jest/p'
+echo "To jest przyklad" | sed -n '/Jest/p'
+echo "To jest przyklad" | sed -n '/Jest/Ip'
+echo "To jest przyklad" | awk '/jest/{ print $0}'
+vi plik.txt
+cat plik.txt
+sed -n '/.sh/p' plik.txt 
+sed -n '/.foo/p' plik.txt 
+man sed
+sed '/.foo/p' plik.txt 
+sed '/.sh/p' plik.txt 
+sed -n '/.sh/p' plik.txt 
+cat plik.txt 
+echo "cash" >> plik.txt 
+cat plik.txt k
+cat plik.txt
+sed -n '/[cbdw]ash/p' plik.txt 
+sed -n '/[a-z]/p' plik.txt 
+sed -n '/[0-9]/p' plik.txt 
+sed -n '/^[cbdw]ash/p' plik.txt'
+sed -n '/^[cbdw]ash/p' plik.txt
+echo "To jest przyklad" | awk '/^[Tt]o/{print $0}'
+echo "to jest przyklad" | awk '/^[Tt]o/{print $0}'
+sed -n '/^[cbdw]ash/p' plik.txt
+sed -n '/[^cbdw]ash/p' plik.txt
+echo "CAPITAL LETTER LINE" > plik.txt 
+sed -n '/[a-z]/p' plik.txt
+vi plik.txt 
+sed -n '/[a-z]/p' plik.txt
+sed -n '/[a-z]/Ip' plik.txt
+sed -n '/[a-zA-Z]/p' plik.txt
+echo "999" >> plik.txt 
+sed -n '/[a-zA-Z]/p' plik.txt
+sed -n '/[a-zA-Z0-9]/p' plik.txt
+cat plik.txt 
+sed 's/foo/linux/' plik.txt 
+sed 's/foo/linux/Ig' plik.txt 
+sed 's//bin/bash//bin/sh/' plik.txt 
+sed 's|/bin/bash|/bin/sh|' plik.txt 
+sed 's3/bin/bash3/bin/sh3' plik.txt 
+sed 's$/bin/bash$/bin/sh$' plik.txt 
+sed 's/\b[0-9]\{3\}\b/number/g' plik.txt 
+sed 's/\b[0-9]\{3\}\b/&0/g' plik.txt 
+sed 's/\b[0-9]\{3\}\b/liczba &/g' plik.txt 
+sed 's/\b[0-9]\{3\}\b/[&]/g' plik.txt 
+sed 's/\b[0-9]\{3\}\b/[&]/' plik.txt 
+echo "tt" | awk '/to?t/{print $0}'
+echo "tot" | awk '/to?t/{print $0}'
+echo "toot" | awk '/to?t/{print $0}'
+grep foo plik.txt 
+alias 
+cat plik.txt | grep foo
+cat plik.txt | grep -i foo
+cat plik.txt | grep -v foo
+cat plik.txt | grep -vn foo
+cat plik.txt | grep -in foo
+cat plik.txt | grep -i -n foo
+cat plik.txt | grep -i ^c
+cat plik.txt | grep  ^c
+cat plik.txt | grep -i ^c
+cat plik.txt | grep -i e$
+cat plik.txt | grep -i ash
+cat plik.txt | grep -i ash -B 1 -A 2
+systemctl restart chronyd
+sudo systemctl restart chronyd
+less /var/log/messages 
+sudo less /var/log/messages 
+sudo cat /var/log/messages | grep "Deactivated successfully" -i -B 10 -A 50
+sudo cat /var/log/messages | grep "Deactivated successfully" -i -B 2 -A 5
+cat /etc/ssh/sshd_config
+sudo cat /etc/ssh/sshd_config
+sudo cat /etc/ssh/sshd_config | grep -v "^#"
+sudo cat /etc/ssh/sshd_config | grep -v "^#" | tr -s '\n'
+man tr
+sudo \less /etc/passwd
+sudo cat /etc/passwd | grep :/home/.* 
+cat plik.txt 
+cat plik.txt | grep -e 123 -e 999
+vi lab1.sh
+chmod +x lab1.sh
+./lab1.sh 
+ls -la
+ls -lah
+cd backup/
+ls -la
+ls -la | wc -l
+cd ..
+less copy.err 
+less copy.log 
+vi wina.txt
+cat wina.txt
+grep Fra wina.txt | awk -F "," '{print $1 "," $3 "," $4 }'
+grep -v Fra wina.txt | wc -l
+grep -v Fra wina.txt
+grep -v Fra wina.txt | grep -v Nazwa
+sed -n '1,$p' wina.txt 
+sed -n '2,$p' wina.txt 
+sed -n '2,$p' wina.txt | grep -v Fra | wc -l
+echo -n "Innych win jest: " ; sed -n '2,$p' wina.txt | grep -v Fra | wc -l
+echo -n "Innych win jest: " ; grep -v Nazwa wina.txt | grep -v Fra | wc -l
+cat wina.txt 
+sed '2,3s/wytrawne/półwytrawne/' wina.txt 
+cat wina.txt  | grep -n 0
+sed '5i\Nowe wino francuskie,Fra,czerwone wytrawne,44.00' wina.txt 
+cat wina.txt  | grep -n 0
+sed -i '5i\Nowe wino francuskie,Fra,czerwone wytrawne,44.00' wina.txt 
+cat wina.txt  | grep -n 0
+sed -i '4a\Nowe wino francuskie2,Fra,czerwone wytrawne,44.00' wina.txt 
+cat wina.txt  | grep -n 0
+ls -la
+tar --help
+tac cJvf arch1.tar.xz  backup/
+tar cJvf arch1.tar.xz  backup/
+df -h
+ls -lah
+xz --help
+gzip --help
+tar cjvf arch2.tar.bz2  backup/
+tar czvf arch3.tar.gz  backup/
+ls -la arch*
+ls -lah arch*
+tar xjvf arch2.tar.bz2
+ls -la
+gzip --help
+gzip -l arch3.tar.gz 
+gzip -dk arch3.tar.gz 
+ls -la
+gzip -rck --best /usr/bin/ > arch4-best.gz
+ls -lah arch*
+rm -rf arch*
+ls -la
+mkdir backup-include
+cd backup-include
+cd /usr/
+tar cJvf /home/backup-include.tar.xz include
+sudo tar cJvf /home/backup-include.tar.xz include
+cd 
+cd backup-include/
+ls -la
+mv /home/backup-include.tar.xz .
+sudo mv /home/backup-include.tar.xz .
+ls -la
+ls -lah
+tar -C /usr -Jcf include.tar.xz include 
+ls -la
+ls -lah
+ls -lh include.tar.xz 
+tar tvf include.tar.xz
+cd 
+mkdir restore
+cd restore
+tar xvf ../backup-include/include.tar.xz 
+ls -la
+cd include/
+sl -la
+ls -la
+ls -la python3.9/ -R
+cd
+tar xfv backup-include/include.tar.xz /tmp/
+tar xfv /tmp/ backup-include/include.tar.xz
+mkdir /tmp/restore
+tar xfv /tmp/restore backup-include/include.tar.xz
+man tar
+tar xfv  backup-include/include.tar.xz -C /tmp/restore
+history
+git clone https://github.com/mariano-italiano/lin2_Apr2024.git
+sudo dnf install git -y
+git clone https://github.com/mariano-italiano/lin2_Apr2024.git
+history | awk '$1 > 28' | cut -c 8- > lin2_Apr2024/day1-history.txt
