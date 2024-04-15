@@ -1,0 +1,12 @@
+[Unit]
+Description=My service to monitor file if it exists
+After=network.target
+Requires=network.target
+
+[Service]
+ExecStart=/home/student/monitorSystemd.sh start
+ExecStop=/home/student/monitorSystemd.sh stop
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

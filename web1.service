@@ -1,0 +1,12 @@
+[Unit]
+Description=My docker web server
+After=docker.service
+Requires=docker.service
+
+[Service]
+ExecStart=/usr/bin/docker start -a web1
+ExecStop=/usr/bin/docker stop -t 2 web1
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
