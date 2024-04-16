@@ -1,0 +1,382 @@
+netstat -vatnulp
+netstat -i
+ip -s link
+ethtool -S
+ethtool -S ens33 
+netstat -vatnulp
+netstat -h
+netstat -vatulp
+netstat -vatnulp
+netstat -vatnul
+netstat -vatnulp
+ssh student@192.168.1.90
+netstat -vatnulp
+ss -vatnulp
+ss -vatlp
+ss
+ss -atnlup
+ss -vatnulp
+netstat -vatnulp
+netstat --help
+man netstat 
+tcpdump -i ens33 src port 80
+sudo \tcpdump -i ens33 src port 80
+sudo tcpdump -i ens33 src port 80
+netstat -vatnulp
+man netstat 
+man ss
+man netstat 
+sudo reboot
+cd /boot/grub2/
+sudo -i
+su -
+sudo -i
+crontab -l
+crontab -l -u root
+sudo crontab -l -u root
+crontab -e
+which cat
+crontab -e
+which date
+crontab -e
+crontab -l
+date
+crontab -e
+sudo systemctl restart sshd | at 3:00 PM 04/20/2024
+sudo systemctl restart sshd | at 3:00 PM 04/21/2024
+atq
+at -l
+at --help
+at -c 2
+sudo find / -name marcinDELIMITER62a409f4
+date
+date --help
+date +%d-%m-%Y
+touch logfile-`date +%d%m%Y-%H%M%S`.log
+ls -la *.log
+hwclock 
+sudo hwclock 
+date
+timedatectl 
+date
+hwclock -h
+sudo hwclock -w
+sudo hwclock
+date
+sudo hwclock;date
+timedatectl 
+sudo timedatectl set-ntp no
+timedatectl 
+sudo timedatectl set-timezone America/Los_Angeles
+date
+timedatectl 
+sudo timedatectl set-timezone Europe/Warsaw 
+sudo timedatectl set-ntp yes
+timedatectl 
+systemctl status chronyd
+vi /etc/chrony.conf 
+sudo vi /etc/chrony.conf 
+systemctl restart chronyd
+sudo systemctl restart chronyd
+sudo systemctl status chronyd
+chronyc sources
+chronyc sources -h
+chronyc sources -v
+chronyc tracking 
+chronyc sources 
+ls -la /
+pwd
+ls -la
+ls -lai
+ls -la /bin/sh
+ln -s plik.txt softlink
+ls -ll
+vi plik.txt
+vi softlink 
+vi plik.txt
+mv plik.txt plik.txt.bak
+ls -la
+vi plik.txt
+vi softlink 
+vi plik.txt
+ls -la
+cat -la
+cat plik.txt
+cat -lai
+ls -lai
+ln hardlink wina.txt
+ln wina.txt hardlink
+ls -la 
+ls -lai
+vi wina.txt 
+vi hardlink 
+vi wina.txt 
+rm wina.txt 
+vi hardlink 
+ls -la
+ls -lai
+ln hardlink wina.txt
+ls -lai
+find / -inum 2178
+sudo find / -inum 2178
+cat /proc/partitions 
+echo "- - -" > /sys/class/scsi_host/host0/scan 
+sudo echo "- - -" > /sys/class/scsi_host/host0/scan 
+sudo -i
+fdisk /dev/sdb
+sudo fdisk /dev/sdb
+sudocat /proc/partitions 
+gdisk /dev/sdb
+sudo gdisk /dev/sdb
+wipefs -h
+wipefs -a /dev/sdb
+sudo wipefs -a /dev/sdb
+pvcreate /dev/sdb
+sudo pvcreate /dev/sdb
+vgcreate --help
+vgcreate --physicalextentsize 1M vg1 /dev/sdb
+sudo vgcreate --physicalextentsize 1M vg1 /dev/sdb
+pvdisplay 
+sudo pvdisplay 
+sudo vgdisplay 
+pvs
+sudo pvs
+sudo lvcreate -n lv1 -L 2G vg1
+lvdisplay 
+sudo lvdisplay lv1
+sudo lvdisplay /dev/vg1/lv1
+sudo lvs
+cat /proc/partitions 
+cd /dev/
+ls -la
+cd mapper/
+ls -la
+cd ../vg1/
+ls -la
+cd
+lsblk
+blkid
+df -h
+df -hT
+sudo mkfs.xfs /dev/mapper/vg1-lv1
+blkid
+sudo mkdir /xfs_part
+sudo mount /dev/vg1/lv1 /xfs_part
+df -h
+blkid
+sudo blkid
+fallocate -l 1850M /xfs_part/bigfile
+sudo fallocate -l 1850M /xfs_part/bigfile
+df -h
+ls -la /xfs_part/
+ls -lah /xfs_part/
+lvs
+sudo lvs
+sudo vgs
+lvextend -L +2G /dev/vg1/lv1
+sudo lvextend -L +2G /dev/vg1/lv1
+sudo lvextend -l 2047 /dev/vg1/lv1
+sudo lvs
+sudo lvextend -l +2047 /dev/vg1/lv1
+sudo lvs
+df -h
+xfs_growfs /dev/vg1/lv1
+sudo xfs_growfs /dev/vg1/lv1
+df -h
+lvresize -h
+df -h
+dd if=/dev/urandom of=/xfs_part/bigfile2 bs=1M count=1024
+sudo dd if=/dev/urandom of=/xfs_part/bigfile2 bs=1M count=1024
+df -h
+sudo dd if=/dev/urandom of=/xfs_part/bigfile3 bs=1M count=1024
+df -h
+sudo lvs
+sudo vgs
+sudo -i
+sudo pvcreate /dev/sdc
+sudo vgextend -h
+sudo vgextend vg1 /dev/sdc
+sduo vgs
+sudo vgs
+df -h
+sudo lvresize -h
+sudo lvresize -r -l +100%FREE /dev/vg1/lv1
+df -h
+umount /xfs_part 
+sudo umount /xfs_part 
+mount /dev/mapper/vg1-lv1 /xfs_part/
+sudo mount /dev/mapper/vg1-lv1 /xfs_part/
+df -h
+mount
+df -h
+cd /fs
+cd /xfs_part/
+ls -la
+sudo rm bigfile3
+df -h
+sudo vg1
+sudo vgs
+cd
+sudo xfsdump -f /tmp/xfs_part.dump /xfs_part/
+df -h
+sudo -i
+sudo lvremove /dev/vg1/lv1
+sudo lvcreate -n lv1 -L 4G vg1
+sudo lvs
+sudo mkfs.xfs /dev/vg1/lv1
+sudo xfsrestore -f /tmp/xfs_part.dump /xfs_part
+sudo mount /dev/mapper/vg1-lv1 /xfs_part/
+df -h
+sudo xfsrestore -f /tmp/xfs_part.dump /xfs_part
+df -h
+ls -la /xfs_part/
+ls -lah /tmp/
+sudo vgs
+sudo pvs
+vgreduce 
+sudo vgreduce 
+sudo vgreduce -h
+sudo vgreduce vg1 /dev/sdc
+sudo vgdisplay vg1
+sudo vgdisplay vg1 -h
+sudo vgdisplay vg1 -
+sudo vgdisplay vg1 -v
+sudo umoun /xfs_part/
+sudo umount /xfs_part/
+sudo lvremove /dev/vg1/lv1
+sudo lvcreate -n lv1 -L 3G vg1
+mount /dev/vg1/lv1 /xfs_part/
+sudo mount /dev/vg1/lv1 /xfs_part/
+sudo mkfs.xfs /dev/vg1/lv1
+sudo mount /dev/vg1/lv1 /xfs_part/
+df -h
+sudo vgreduce vg1 /dev/sdc
+sudo vgdisplay vg1 -
+sudo vgdisplay vg1 -v
+df -h
+sudo vi /etc/fstab 
+blkid
+sudo vi /etc/fstab 
+man /etc/fstab
+man mount
+sudo vi /etc/fstab 
+sudo umount /xfs_part/
+sudo mount -a
+sudo blkid
+sudo vi /etc/fstab 
+sudo mount -a
+sudo -i
+cd /xfs_part/
+vi script.sg
+vi script.sh
+sudo vi script.sh
+chmod +x script.sh
+sudo chmod +x script.sh
+ls -la 
+sudo -i
+cd
+cat /proc/partitions 
+sudo wipefs -a /dev/sdc
+sudo pvcreate /dev/sdc
+sudo vgcreate /dev/sdc
+sudo vgcreate vg2 /dev/sdc
+sudo lvcreate -n lv2 -L 1G vg2
+sudo lvs
+sudo mkfs.ext4 /dev/mapper/vg2-lv2 
+sudo mkidr /ext4-part
+sudo mkdir /ext4-part
+sudo mount /dev/vg2/lv2 /ext4-part
+df -h
+sudo blkid
+sudo e2label /dev/mapper/vg2-lv2 DATA2
+e2label 
+e2label /dev/mapper/vg2-lv2
+sudo e2label /dev/mapper/vg2-lv2
+sudo blkid
+sudo vi /etc/fstab 
+sudo umount /ext4-part 
+sudo mount -a
+sudo -i
+sudo blkid
+xfs_admin -h
+xfs_admin -L DATA1 /dev/vg1/lv1 
+sudo xfs_admin -L DATA1 /dev/vg1/lv1 
+sudo blkid
+sudo swapon -s
+sudo dd if=/dev/urandom of=/tmp/swapfile1 bs=1M count=10
+sudo mkswap /tmp/swapfile1 
+sudo chmod 0600 /tmp/swapfile1
+sudo swapon -s
+sudo swapon /tmp/swapfile1
+sudo swapon -s
+cat /proc/meminfo 
+free -m
+free -mh
+sudo swapon -s
+sudo swapoff /tmp/swapfile1 
+sudo swapon -s
+cat /proc/swaps 
+sudo lvs
+\df -h
+cd /ext4-part
+ls -la
+sudo dd if=/dev/urandom of=file1 bs=1M count=300
+sudo dd if=/dev/urandom of=file1 bs=1M count=200
+sudo dd if=/dev/urandom of=file2 bs=1M count=300
+df -h
+ls -lah
+vi test.txt
+sudo vi test.txt
+ls -la
+cd
+sudo lvcreate -L 900M -s lv2-snap /dev/vg2/lv2
+sudo lvcreate -L 900M -s -n lv2-snap /dev/vg2/lv2
+sudo lvs
+sudo rm /ext4-part/file1 /ext4-part/test.txt 
+sudo lvs
+sudo watch -n1  lvs
+cd /ext4-part/
+wget https://c4.wallpaperflare.com/wallpaper/849/138/463/nature-high-resolution-wallpaper-preview.jpg
+sudo wget https://c4.wallpaperflare.com/wallpaper/849/138/463/nature-high-resolution-wallpaper-preview.jpg
+ls -la
+ls -lah
+sudo dd if=/dev/urandom of=file4 bs=1M count=20
+sudo watch -n1  lvs
+sudo cp -rp /home/student/lin2_Apr2024/ .
+sudo watch -n1  lvs
+cd
+sudo lvconvert --merge /dev/vg2/lv2
+sudo -i
+sudo lvcreate -L 900M -s -n lv2-snap /dev/vg2/lv2
+sudo cp -rp backup /ext4-part/
+sudo lvs
+ls -la /ext4-part/
+df -h
+mount /dev/vg2/lv2 /ext4-part/
+sudo mount /dev/vg2/lv2 /ext4-part/
+df -h
+ls -la /ext4-part/
+sudo lvremove /dev/vg2/lv2-snap
+sudo lvcreate -L 900M -s -n lv2-snap /dev/vg2/lv2
+sudo cp -rp lin2_Apr2024/ /ext4-part/
+ls -la /ext4-part/
+df -h
+sudo lvs
+d f-h
+df -h
+sudo lvconvert --merge /dev/vg2/lv2-snap 
+sudo umount /ext4-part 
+sudo lvs
+sudo lvchange --refresh
+sudo lvchange --refresh /dev/vg2/lv2
+mount /dev/vg2/lv2 /ext4-part/
+sudo mount /dev/vg2/lv2 /ext4-part/
+cd /ext4-part/
+ls -la
+umount /ext4-part 
+sudo umount /ext4-part 
+cd
+sudo umount /ext4-part 
+history
+cd lin2_Apr2024/
+history | awk '$1 > 461' | cut -c 8- > day2-history.txt 
