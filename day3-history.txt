@@ -771,3 +771,21 @@ sudo chage -d 0 testuser1
 history
 cd lin2_Apr2024/
 history | awk '$1 > 461' | cut -c 8- > day3-history.txt
+mkdir projekty
+ls -la projekty
+sudo setfacl -b /home/student
+ls -la projekty
+sudo setfacl -m d:u:testuser1:6 projekty/
+getfacl -c projekty/
+mkdir projekty/proj1
+getfacl -c projekty/proj1
+touch projekty/plik1
+getfacl -c projekty/plik1
+setfacl --help
+sudo setfacl -k projekty/
+getfacl -c projekty/
+ls -la projekty/
+sudo setfacl -k -R projekty/
+ls -la projekty/
+sudo setfacl -b -R projekty/
+ls -la projekty/
