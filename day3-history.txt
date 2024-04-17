@@ -1,0 +1,56 @@
+grep -i config_dm_crypt /boot/config-$(uname -r)
+uname -a
+uname -r
+lsmod
+lsmod | grep -i crypt
+modprobe dm_crypt
+sudo modprobe dm_crypt
+lsmod | grep -i crypt
+sudo dnf install cryptsetup -y
+cat /proc/partitions 
+lvs
+sudo lvs
+sudo pvs
+df -h
+vi /etc/fstab 
+sudo vi /etc/fstab 
+umount /ext4-part 
+sudo umount /ext4-part 
+df -h
+lvremove /dev/vg2/lv2
+sudo lvremove /dev/vg2/lv2
+sudo vgremove vg2
+sudo pvremove /dev/sdc
+sudo pvs
+cat /proc/partitions 
+wipefs -a /dev/sdc
+sudo wipefs -a /dev/sdc
+cd
+sudo cryptsetup -y luksFormat /dev/sdc
+sudo cryptsetup luksOpen /dev/sdc secretDisk
+sudo mkfs.ext4 /dev/mapper/secretDisk 
+mkdir /secure
+sudo mkdir /secure
+sudo mount /dev/mapper/secretDisk /secure
+cd /secure/
+ls -la
+touch plik1
+sudo touch plik1
+ls -la
+cd
+sudo umount /secure 
+sudo cryptsetup luksClose secretDisk 
+ls -la /dev/mapper/
+sudo cryptsetup luksOpen /dev/sdc secure
+ls -la /dev/mapper/
+sudo mount /dev/mapper/secure /secure/
+cd /secure/
+ls -la
+sudo systemctl set-default multi-user.target 
+cd
+sudo blkid
+sudo vi /etc/crypttab 
+sudo vi /etc/fstab 
+sudo vi /etc/crypttab 
+history
+history | awk '$1 > 867' | cut -c 8- > lin2_Apr2024/day3-history.txt
