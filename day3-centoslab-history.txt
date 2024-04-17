@@ -1,0 +1,75 @@
+gdisk /dev/sdb
+cat /proc/partitions
+mkfs.ext4 /dev/sdb1
+mkdir /part1
+blkid
+vi /etc/fstab
+gdisk /dev/sdb
+mkswap -L swap-extra /dev/sdb2
+e2label /dev/sdb2
+e2label swap-extra2 /dev/sdb2
+swaplabel -h
+swaplabel -L swap-extra-label /dev/sdb2
+swaplabel -L swap-extra2 /dev/sdb2
+blkid
+swaplabel -L swap-extra /dev/sdb2
+blkid
+vi /etc/fstab
+df -h
+swapon -s
+mount -a
+df -h
+swapon -s
+swapon -a
+swapon -s
+touch /part1/test
+mount
+mount -o remount,rw /part1
+touch /part1/test
+mount
+swapon -s
+vi /etc/fstab
+umount /part1
+swapoff -a
+df -h
+swapon -s
+gdisk /dev/sdb
+wipefs -a /dev/sdb
+gdisk /dev/sdb
+pvcreate /dev/sdb[1-2]
+vgcreate vg1 /dev/sdb[1-2]
+lvcreate -h
+lvcreate -L 100M -m1 -n lv-mirror vg1
+lvs -a -o +devices
+lvcreate -L 100M -n lv-data vg1
+lvs
+mkfs.ext4 /dev/vg1/lv-mirror
+mkfs.xfs /dev/mapper/vg1-lv--data
+mkdir /data /mirror
+blkid
+vi /etc/fstab
+mount /dev/mapper/vg1-lv--data /data
+mount /dev/mapper/vg1-lv--mirror /mirror/
+df -h
+dd if=/dev/urandom of=/mirror/testfile1 bs=20M count=1
+dd if=/dev/urandom of=/mirror/testfile2 bs=20M count=1
+dd if=/dev/urandom of=/mirror/testfile2 bs=50M count=1
+dd if=/dev/urandom of=/data/testfile2 bs=10M count=1
+dd if=/dev/urandom of=/data/testfile1 bs=20M count=1
+df -h
+lvs -a -o +devices
+lvcreate -L 100M -s -n lv-data-snap1 /dev/vg1/lv-data
+lvs
+cd /data
+cp -rp /usr/bin/* .
+df -h
+ls -la
+lvs
+cd
+umount /data
+lvconvert --merge /dev/vg1/lv-data-snap1
+lvs
+mount /dev/vg1/lv-data /data
+df -h
+cd /data/
+ls -la
