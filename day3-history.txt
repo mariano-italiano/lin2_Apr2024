@@ -1,3 +1,409 @@
+netstat -vatnulp
+netstat -i
+ip -s link
+ethtool -S
+ethtool -S ens33 
+netstat -vatnulp
+netstat -h
+netstat -vatulp
+netstat -vatnulp
+netstat -vatnul
+netstat -vatnulp
+ssh student@192.168.1.90
+netstat -vatnulp
+ss -vatnulp
+ss -vatlp
+ss
+ss -atnlup
+ss -vatnulp
+netstat -vatnulp
+netstat --help
+man netstat 
+tcpdump -i ens33 src port 80
+sudo \tcpdump -i ens33 src port 80
+sudo tcpdump -i ens33 src port 80
+netstat -vatnulp
+man netstat 
+man ss
+man netstat 
+sudo reboot
+cd /boot/grub2/
+sudo -i
+su -
+sudo -i
+fallocate -l 100M test
+ls -la .
+ls -la .h
+ls -lah
+fallocate -l 1G test
+ls -lah
+watch -n1 sudo lvs
+crontab -l
+crontab -l -u root
+sudo crontab -l -u root
+crontab -e
+which cat
+crontab -e
+which date
+crontab -e
+crontab -l
+date
+crontab -e
+sudo systemctl restart sshd | at 3:00 PM 04/20/2024
+sudo systemctl restart sshd | at 3:00 PM 04/21/2024
+atq
+at -l
+at --help
+at -c 2
+sudo find / -name marcinDELIMITER62a409f4
+date
+date --help
+date +%d-%m-%Y
+touch logfile-`date +%d%m%Y-%H%M%S`.log
+ls -la *.log
+hwclock 
+sudo hwclock 
+date
+timedatectl 
+date
+hwclock -h
+sudo hwclock -w
+sudo hwclock
+date
+sudo hwclock;date
+timedatectl 
+sudo timedatectl set-ntp no
+timedatectl 
+sudo timedatectl set-timezone America/Los_Angeles
+date
+timedatectl 
+sudo timedatectl set-timezone Europe/Warsaw 
+sudo timedatectl set-ntp yes
+timedatectl 
+systemctl status chronyd
+vi /etc/chrony.conf 
+sudo vi /etc/chrony.conf 
+systemctl restart chronyd
+sudo systemctl restart chronyd
+sudo systemctl status chronyd
+chronyc sources
+chronyc sources -h
+chronyc sources -v
+chronyc tracking 
+chronyc sources 
+ls -la /
+pwd
+ls -la
+ls -lai
+ls -la /bin/sh
+ln -s plik.txt softlink
+ls -ll
+vi plik.txt
+vi softlink 
+vi plik.txt
+mv plik.txt plik.txt.bak
+ls -la
+vi plik.txt
+vi softlink 
+vi plik.txt
+ls -la
+cat -la
+cat plik.txt
+cat -lai
+ls -lai
+ln hardlink wina.txt
+ln wina.txt hardlink
+ls -la 
+ls -lai
+vi wina.txt 
+vi hardlink 
+vi wina.txt 
+rm wina.txt 
+vi hardlink 
+ls -la
+ls -lai
+ln hardlink wina.txt
+ls -lai
+find / -inum 2178
+sudo find / -inum 2178
+cat /proc/partitions 
+echo "- - -" > /sys/class/scsi_host/host0/scan 
+sudo echo "- - -" > /sys/class/scsi_host/host0/scan 
+sudo -i
+fdisk /dev/sdb
+sudo fdisk /dev/sdb
+sudocat /proc/partitions 
+gdisk /dev/sdb
+sudo gdisk /dev/sdb
+wipefs -h
+wipefs -a /dev/sdb
+sudo wipefs -a /dev/sdb
+pvcreate /dev/sdb
+sudo pvcreate /dev/sdb
+vgcreate --help
+vgcreate --physicalextentsize 1M vg1 /dev/sdb
+sudo vgcreate --physicalextentsize 1M vg1 /dev/sdb
+pvdisplay 
+sudo pvdisplay 
+sudo vgdisplay 
+pvs
+sudo pvs
+sudo lvcreate -n lv1 -L 2G vg1
+lvdisplay 
+sudo lvdisplay lv1
+sudo lvdisplay /dev/vg1/lv1
+sudo lvs
+cat /proc/partitions 
+cd /dev/
+ls -la
+cd mapper/
+ls -la
+cd ../vg1/
+ls -la
+cd
+lsblk
+blkid
+df -h
+df -hT
+sudo mkfs.xfs /dev/mapper/vg1-lv1
+blkid
+sudo mkdir /xfs_part
+sudo mount /dev/vg1/lv1 /xfs_part
+df -h
+blkid
+sudo blkid
+fallocate -l 1850M /xfs_part/bigfile
+sudo fallocate -l 1850M /xfs_part/bigfile
+df -h
+ls -la /xfs_part/
+ls -lah /xfs_part/
+lvs
+sudo lvs
+sudo vgs
+lvextend -L +2G /dev/vg1/lv1
+sudo lvextend -L +2G /dev/vg1/lv1
+sudo lvextend -l 2047 /dev/vg1/lv1
+sudo lvs
+sudo lvextend -l +2047 /dev/vg1/lv1
+sudo lvs
+df -h
+xfs_growfs /dev/vg1/lv1
+sudo xfs_growfs /dev/vg1/lv1
+df -h
+lvresize -h
+df -h
+dd if=/dev/urandom of=/xfs_part/bigfile2 bs=1M count=1024
+sudo dd if=/dev/urandom of=/xfs_part/bigfile2 bs=1M count=1024
+df -h
+sudo dd if=/dev/urandom of=/xfs_part/bigfile3 bs=1M count=1024
+df -h
+sudo lvs
+sudo vgs
+sudo -i
+sudo pvcreate /dev/sdc
+sudo vgextend -h
+sudo vgextend vg1 /dev/sdc
+sduo vgs
+sudo vgs
+df -h
+sudo lvresize -h
+sudo lvresize -r -l +100%FREE /dev/vg1/lv1
+df -h
+umount /xfs_part 
+sudo umount /xfs_part 
+mount /dev/mapper/vg1-lv1 /xfs_part/
+sudo mount /dev/mapper/vg1-lv1 /xfs_part/
+df -h
+mount
+df -h
+cd /fs
+cd /xfs_part/
+ls -la
+sudo rm bigfile3
+df -h
+sudo vg1
+sudo vgs
+cd
+sudo xfsdump -f /tmp/xfs_part.dump /xfs_part/
+df -h
+sudo -i
+sudo lvremove /dev/vg1/lv1
+sudo lvcreate -n lv1 -L 4G vg1
+sudo lvs
+sudo mkfs.xfs /dev/vg1/lv1
+sudo xfsrestore -f /tmp/xfs_part.dump /xfs_part
+sudo mount /dev/mapper/vg1-lv1 /xfs_part/
+df -h
+sudo xfsrestore -f /tmp/xfs_part.dump /xfs_part
+df -h
+ls -la /xfs_part/
+ls -lah /tmp/
+sudo vgs
+sudo pvs
+vgreduce 
+sudo vgreduce 
+sudo vgreduce -h
+sudo vgreduce vg1 /dev/sdc
+sudo vgdisplay vg1
+sudo vgdisplay vg1 -h
+sudo vgdisplay vg1 -
+sudo vgdisplay vg1 -v
+sudo umoun /xfs_part/
+sudo umount /xfs_part/
+sudo lvremove /dev/vg1/lv1
+sudo lvcreate -n lv1 -L 3G vg1
+mount /dev/vg1/lv1 /xfs_part/
+sudo mount /dev/vg1/lv1 /xfs_part/
+sudo mkfs.xfs /dev/vg1/lv1
+sudo mount /dev/vg1/lv1 /xfs_part/
+df -h
+sudo vgreduce vg1 /dev/sdc
+sudo vgdisplay vg1 -
+sudo vgdisplay vg1 -v
+df -h
+sudo vi /etc/fstab 
+blkid
+sudo vi /etc/fstab 
+man /etc/fstab
+man mount
+sudo vi /etc/fstab 
+sudo umount /xfs_part/
+sudo mount -a
+sudo blkid
+sudo vi /etc/fstab 
+sudo mount -a
+sudo -i
+cd /xfs_part/
+vi script.sg
+vi script.sh
+sudo vi script.sh
+chmod +x script.sh
+sudo chmod +x script.sh
+ls -la 
+sudo -i
+cd
+cat /proc/partitions 
+sudo wipefs -a /dev/sdc
+sudo pvcreate /dev/sdc
+sudo vgcreate /dev/sdc
+sudo vgcreate vg2 /dev/sdc
+sudo lvcreate -n lv2 -L 1G vg2
+sudo lvs
+sudo mkfs.ext4 /dev/mapper/vg2-lv2 
+sudo mkidr /ext4-part
+sudo mkdir /ext4-part
+sudo mount /dev/vg2/lv2 /ext4-part
+df -h
+sudo blkid
+sudo e2label /dev/mapper/vg2-lv2 DATA2
+e2label 
+e2label /dev/mapper/vg2-lv2
+sudo e2label /dev/mapper/vg2-lv2
+sudo blkid
+sudo vi /etc/fstab 
+sudo umount /ext4-part 
+sudo mount -a
+sudo -i
+sudo blkid
+xfs_admin -h
+xfs_admin -L DATA1 /dev/vg1/lv1 
+sudo xfs_admin -L DATA1 /dev/vg1/lv1 
+sudo blkid
+sudo swapon -s
+sudo dd if=/dev/urandom of=/tmp/swapfile1 bs=1M count=10
+sudo mkswap /tmp/swapfile1 
+sudo chmod 0600 /tmp/swapfile1
+sudo swapon -s
+sudo swapon /tmp/swapfile1
+sudo swapon -s
+cat /proc/meminfo 
+free -m
+free -mh
+sudo swapon -s
+sudo swapoff /tmp/swapfile1 
+sudo swapon -s
+cat /proc/swaps 
+sudo lvs
+\df -h
+cd /ext4-part
+ls -la
+sudo dd if=/dev/urandom of=file1 bs=1M count=300
+sudo dd if=/dev/urandom of=file1 bs=1M count=200
+sudo dd if=/dev/urandom of=file2 bs=1M count=300
+df -h
+ls -lah
+vi test.txt
+sudo vi test.txt
+ls -la
+cd
+sudo lvcreate -L 900M -s lv2-snap /dev/vg2/lv2
+sudo lvcreate -L 900M -s -n lv2-snap /dev/vg2/lv2
+sudo lvs
+sudo rm /ext4-part/file1 /ext4-part/test.txt 
+sudo lvs
+sudo watch -n1  lvs
+cd /ext4-part/
+wget https://c4.wallpaperflare.com/wallpaper/849/138/463/nature-high-resolution-wallpaper-preview.jpg
+sudo wget https://c4.wallpaperflare.com/wallpaper/849/138/463/nature-high-resolution-wallpaper-preview.jpg
+ls -la
+ls -lah
+sudo dd if=/dev/urandom of=file4 bs=1M count=20
+sudo watch -n1  lvs
+sudo cp -rp /home/student/lin2_Apr2024/ .
+sudo watch -n1  lvs
+cd
+sudo lvconvert --merge /dev/vg2/lv2
+sudo -i
+sudo lvcreate -L 900M -s -n lv2-snap /dev/vg2/lv2
+sudo cp -rp backup /ext4-part/
+sudo lvs
+ls -la /ext4-part/
+df -h
+mount /dev/vg2/lv2 /ext4-part/
+sudo mount /dev/vg2/lv2 /ext4-part/
+df -h
+ls -la /ext4-part/
+sudo lvremove /dev/vg2/lv2-snap
+sudo lvcreate -L 900M -s -n lv2-snap /dev/vg2/lv2
+sudo cp -rp lin2_Apr2024/ /ext4-part/
+ls -la /ext4-part/
+df -h
+sudo lvs
+d f-h
+df -h
+sudo lvconvert --merge /dev/vg2/lv2-snap 
+sudo umount /ext4-part 
+sudo lvs
+sudo lvchange --refresh
+sudo lvchange --refresh /dev/vg2/lv2
+mount /dev/vg2/lv2 /ext4-part/
+sudo mount /dev/vg2/lv2 /ext4-part/
+cd /ext4-part/
+ls -la
+umount /ext4-part 
+sudo umount /ext4-part 
+cd
+sudo umount /ext4-part 
+history
+cd lin2_Apr2024/
+history | awk '$1 > 461' | cut -c 8- > day2-history.txt 
+git status
+git add .
+git commit -m "Adding day2 history file"
+git push
+git pull
+git config pull.rebase false
+git pull
+git push
+sudo poweroff
+sudo vi /etc/fstab 
+df -g
+df -h
+cd lin2_Apr2024/
+git pull
+cd
+cd /boot/
+ls -la
 grep -i config_dm_crypt /boot/config-$(uname -r)
 uname -a
 uname -r
@@ -54,3 +460,314 @@ sudo vi /etc/fstab
 sudo vi /etc/crypttab 
 history
 history | awk '$1 > 867' | cut -c 8- > lin2_Apr2024/day3-history.txt
+cd lin2_Apr2024/
+git status
+git add .
+git commit -m "Adding day3 history file"
+git push
+reboot
+sudo reboot
+sudo systemctl set-default graphical.target 
+sudo reboot
+df -h
+cd /secure/
+ls -la
+sudo touch plik2
+sudo vi /etc/default/grub 
+sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+sudo reboot
+cd /secure/
+ls -la
+cd
+sudo vi /root/.luks-pass
+sudo chmod 600 /root/.luks-pass
+ls -la /root/.luks-pass
+sudo vi /etc/crypttab 
+sudo reboot
+sudo cryptsetup luksDump /dev/sdc
+ls -la /root
+sudo ls -la /root
+sudo dd if=/dev/random bs=32 count=1 of=/root/.luks-pass
+xxd /root/.luks-pass
+sudo xxd /root/.luks-pass
+sudo cryptsetup luksAddKey /dev/sdc /root/.luks-pass
+sudo cryptsetup luksDump /dev/sdc
+sudo vi /etc/crypttab 
+sudo reboot
+df -h
+ls -la /secure
+sudo dnf install mdadm
+cat /proc/partitions 
+df -h
+sudo vi /etc/fstab 
+sudo lvs
+sudo umount /xfs_part 
+sudo lvremove /dev/vg1/lv1
+sudo vgremove vg1
+sudo pvremove /dev/sdb
+sudo wipefs -a
+sudo wipefs -a /dev/sdb
+cat /proc/partitions 
+gdisk /dev/sdb
+sudo gdisk /dev/sdb
+cat /proc/partitions 
+mdadm -E /dev/sdb[1-3]
+sudo mdadm -E /dev/sdb[1-3]
+mdadm --help
+man mdadm
+sudo mdadm --create /dev/md5 --level=5 --raid-devices=3 /dev/sdb[1-3]
+ls -la /dev/mapper/
+mdadm -D /dev/md5
+sudo mdadm -D /dev/md5
+mkfs.ext4 /dev/md5 
+sudo mkfs.ext4 /dev/md5 
+sudo mkdir /raid5
+sudo mount /dev/md5 /raid5
+df -h
+sudo mdadm --manage --add /dev/md5 /dev/sdb4
+sudo vi /etc/fstab 
+sudo vi /etc/crypttab 
+umount /secure 
+sudo umount /secure 
+sudo cryptsetup luksClose secureDisk
+ls -la /dev/mapper/
+sudo wipefs -a /dev/sdc
+sudo gdisk /dev/sdc
+sudo mdadm --manage --add /dev/md5 /dev/sdc1
+sudo mdadm -D /dev/md5
+sudo cp -rp /usr/bin/* /raid5/
+sudo mdadm -D /dev/md5
+df -h
+sudo mdadm -D /dev/md5
+sudo mdadm --manage --fail /dev/md5 /dev/sdb2
+sudo mdadm -D /dev/md5
+watch -n1 sudo mdadm -D /dev/md5
+sudo mdadm --detail --scan --verbose >> /etc/mdadm.conf
+sudo mdadm --detail --scan --verbose
+sudo vi /etc/mdadm.conf
+sudo mdadm -D /dev/md5
+sudo mdadm --stop /dev/md5
+sudo umount /raid5 
+sudo mdadm --stop /dev/md5
+sudo mdadm --assemble /dev/md5
+sudo mount /dev/md5 /raid5/
+cd /raid5/
+ls -la
+cd
+sudo mount /dev/md5 /raid5/
+sudo umount /raid5 
+sudo mdadm --remove /dev/md5
+sudo rm /etc/mdadm.conf 
+cat /proc/mdstat
+sudo cat /etc/shadowd
+sudo cat /etc/shadow
+sudo ls -la /etc/shadow
+dnf install epel release y
+sudo dnf install epel release y
+sudo dnf install epel release -y
+sudo dnf install epel-release -y
+sudo dnf install snapd -y
+sudo systemctl enable --now snapd.service
+sudo ln- s /var/lib/snapd/snap snap
+sudo ln -s /var/lib/snapd/snap snap
+sudo ln -s /var/lib/snapd/snap /snap
+rm snap/
+snap install john-the-ripper
+sudo snap install john-the-ripper
+cat /etc/passwd
+sudo cat /etc/shadow
+useradd test
+useradd -h
+vi /etc/default/
+ls -la /etc/skel
+ls -la /home/testjohn/
+sudo ls -la /home/testjohn/
+sudo mkdir /etc/myskel
+sudo touch /etc/myskel/app1
+sudo touch /etc/myskel/script.sh
+sudo vi /etc/myskel/script.sh
+sudo vi /etc/login.defs 
+sudo useradd -G ftp -d /tmp/janek -s /bin/sh -c "Ticket Nr: #12345" -k /etc/myskel janek
+sudo useradd -G ftp -d /tmp/janek -s /bin/sh -c "Ticket Nr: 12345" -k /etc/myskel janek
+sudo useradd -G ftp -d /tmp/janek -s /bin/sh -c "Ticket Nr #12345" -k /etc/myskel janek
+sudo useradd -G ftp -d /tmp/janek -s /bin/sh -c "Ticket Nr12345" -k /etc/myskel janek
+sudo useradd -G ftp -m -d /tmp/janek -s /bin/sh -c "Ticket Nr12345" -k /etc/myskel janek
+cat /etc/passwd
+sudo ls -la /tmp/janek
+id janek
+sudo usermod -G sshd janek
+id janek
+usermod -h
+sudo usermod -aG ftp janek
+id janek
+sudo usermod -d /home/janek janek
+sudo usermod -s /bin/bash -g student janek
+id janek
+cat /etc/passwd | tail -1
+userdel -h
+sudo userdel -r janek
+useradd piotr
+sudo useradd piotr
+sudo useradd slawek
+ls -la /home/piotr
+sudo ls -la /home/
+sudo userdel -r piotr
+sudo userdel slawek
+sudo ls -la /home/
+sudo rm -rf /home/slawek
+groupadd -h
+cd /tmp/janek/
+sudo ls  /tmp/janek/
+sudo useradd janek
+id janek
+sudo groupdel janek
+sudo useradd janek
+sudo mv /tmp/janek/script.sh /home/janek/
+ls -la /home/janek/
+sudo ls -la /home/janek/
+sudo chmod 700 /home/janek/script.sh
+sudo ls -la /home/janek/
+sudo vi /home/janek/.bashrc
+vi .bashrc 
+sudo -i
+sudo passwd janek
+sudo vi /home/janek/.bashrc
+sudo vi /etc/ssh/sshd_config
+sudo systemctl restart sshd
+sudo vi /etc/sshd-banner
+sudo systemctl restart sshd
+sudo chage -l
+sudo chage -l janek
+sudo chage -E "2024-04-29" janek
+sudo chage -l janek
+sudo chage -M 3 janek
+sudo chage -l janek
+sudo chage -d 0 janek
+sudo chage -l janek
+sudo chage -d 0 janek
+sudo chage -l janek
+sudo chage -m 0 -M 99999 -I -1 -E -1 janek
+sudo chage -l janek
+sudo vi /etc/sudoers
+sudo visudo
+which gdisk
+q
+sudo visudo
+sudo useradd wlodek
+sudo groupadd networkadmins
+sudo usermod -G networkadmins wlodek 
+id wlodel
+id wlodek
+id janek
+sudo vi /etc/sudoers.d/networkadmins
+sudo visudo
+sudo vi /etc/sudoers.d/networkadmins
+sudo visudo
+sudo passwd wlodek
+ping wp.pl
+sudo ping wp.pl
+su - wlodek 
+su - janek
+sudo visudo
+sudo usermod -aG networkadmins janek 
+su - janek
+ls -la `which passwd`
+which sudo
+ls -la /usr/bin/sudo
+touch plik1
+ls -la plik1
+chmod 4644 plik1
+ls -la plik1
+chmod 4744 plik1
+ls -la plik1
+mkdir special
+ls -al special
+mkdir special/one
+ls -laR special/
+sudo mkdir special/two
+ls -laR special/
+ls -la special/
+chmod 2755 special/
+ls -la special/
+id janek
+sudo usermod -g student janek
+su - janek
+sudo -i
+cd /tmp/
+mv ~/special/ .
+ls -la special/
+sudo -i
+cd
+UMASK=0660
+touch newFile
+ls -la newFile
+export UMASK=0660
+touch newFile
+ls -la newFile
+vi /etc/login.defs 
+UMASK=660
+touch newFile
+vi /etc/login.defs 
+ls -la newFile
+sudo -i
+ls -la
+getfacl -c newFile
+getfacl  newFile
+getfacl -h
+getfacl -c newFile
+ls -la newFile 
+ls -la /home/student
+setfacl -m u:janek:rx .
+ls -la /home
+getfacl -c /home/student
+sudo -i
+mkdir /tmp/finanse
+mkdir /tmp/ksiegowosc
+useradd ania
+sudo groupadd finanse ksiegowosc
+sudo groupadd finanse 
+sudo groupadd ksiegowosc
+sudo useradd -g finanse ania
+sudo useradd -g ksiegowosc kasia
+sudo chgrp finanse /tmp/finanse/
+sudo chgrp ksiegowosc /tmp/ksiegowosc/
+sudo chown ania /tmp/finanse/
+sudo chown kasia /tmp/ksiegowosc/
+ls -la /tmp/
+chmod 750 /tmp/ksiegowosc/
+sudo chmod 750 /tmp/ksiegowosc/
+sudo chmod 750 /tmp/finanse/
+sudo -i
+setfacl -m -u:janek:rwx /tmp/ksiegowosc/
+sudo setfacl -m -u:janek:rwx /tmp/ksiegowosc/
+sudo setfacl -m u:janek:rwx /tmp/ksiegowosc/
+sudo setfacl -m u:janek:rwx,m:r /tmp/finanse/
+getfacl /tmp/finanse/
+getfacl /tmp/ksiegowosc/
+sudo useradd -g ksiegowosc monika
+setfacl -m u:monika:rwx /tmp/ksiegowosc/
+sudo setfacl -m u:monika:rwx /tmp/ksiegowosc/
+getfacl /tmp/ksiegowosc/
+sudo -i
+sudo setfacl -d -m g:finanse:rx /tmp/ksiegowosc/
+sudo -i
+id ania
+sudo -i
+getfacl /tmp/ksiegowosc/
+sudo setfacl -x u:ania /tmp/ksiegowosc/
+getfacl /tmp/ksiegowosc/
+sudo setfacl -b /tmp/ksiegowosc/
+getfacl /tmp/ksiegowosc/
+sudo dnf install -y ksh
+sudo useradd -m -s /bin/ksh -c "Test user" testuser1
+sudo passwd
+sudo passwd test
+sudo passwd testuser1 
+chage -l testuser1 
+sudo chage -l testuser1 
+sudo chage -E "2024-05-01" testuser1 
+sudo chage -l testuser1 
+sudo chage -d 0 testuser1 
+history
+cd lin2_Apr2024/
+history | awk '$1 > 461' | cut -c 8- > day3-history.txt
