@@ -1,0 +1,5 @@
+# Update user manager
+dn: uid=manager,ou=Users,dc=lab,dc=local
+changetype: modify
+replace: cn
+cn: manager

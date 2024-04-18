@@ -1,0 +1,6 @@
+student:x:1000:
+janek:x:1002:
+wlodek:x:1003:
+networkadmins:x:1004:wlodek,janek
+finanse:x:1005:
+ksiegowosc:x:1006:

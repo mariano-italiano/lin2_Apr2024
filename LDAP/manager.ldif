@@ -1,0 +1,17 @@
+# User manager
+dn: uid=manager,ou=Users,dc=lab,dc=local
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: Manager
+uid: manager
+uidNumber: 16003
+gidNumber: 601
+homeDirectory: /home/manager
+loginShell: /bin/bash
+gecos: manager
+userPassword: {crypt}x
+shadowLastChange: 0
+shadowMax: 0
+shadowWarning: 0

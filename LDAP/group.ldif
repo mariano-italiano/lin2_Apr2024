@@ -1,0 +1,44 @@
+dn: cn=student,ou=Groups,dc=lab,dc=local
+objectClass: posixGroup
+objectClass: top
+cn: student
+userPassword: {crypt}x
+gidNumber: 1000
+
+dn: cn=janek,ou=Groups,dc=lab,dc=local
+objectClass: posixGroup
+objectClass: top
+cn: janek
+userPassword: {crypt}x
+gidNumber: 1002
+
+dn: cn=wlodek,ou=Groups,dc=lab,dc=local
+objectClass: posixGroup
+objectClass: top
+cn: wlodek
+userPassword: {crypt}x
+gidNumber: 1003
+
+dn: cn=networkadmins,ou=Groups,dc=lab,dc=local
+objectClass: posixGroup
+objectClass: top
+cn: networkadmins
+userPassword: {crypt}x
+gidNumber: 1004
+memberUid: janek
+memberUid: wlodek
+
+dn: cn=finanse,ou=Groups,dc=lab,dc=local
+objectClass: posixGroup
+objectClass: top
+cn: finanse
+userPassword: {crypt}x
+gidNumber: 1005
+
+dn: cn=ksiegowosc,ou=Groups,dc=lab,dc=local
+objectClass: posixGroup
+objectClass: top
+cn: ksiegowosc
+userPassword: {crypt}x
+gidNumber: 1006
+

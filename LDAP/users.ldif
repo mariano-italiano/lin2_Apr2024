@@ -1,0 +1,18 @@
+# User Zosia
+dn: uid=zosia,ou=Users,dc=lab,dc=local
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: zosia
+uid: zosia
+uidNumber: 16001
+gidNumber: 12001
+homeDirectory: /home/zosia
+loginShell: /bin/bash
+gecos: Zosia
+userPassword: {crypt}x
+shadowLastChange: 0
+shadowMax: 0
+shadowWarning: 0
+
