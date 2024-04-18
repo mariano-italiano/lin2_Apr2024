@@ -31,3 +31,77 @@ renice +50 2438
 ps -ef | hrep skry
 ps -elf | grep skrypt
 
+sysctl -a
+cd /proc/sys
+ls -la
+touch plik
+cd vm
+ls -la swappiness 
+cat swappiness
+echo 60 > swappiness 
+cat swappiness
+sysctl -a | grep swappine
+vi /etc/sysctl.conf 
+sysctl -a | grep swappine
+sysctl -p
+sysctl -a | grep swappine0
+echo "1" > /proc/sys/net/ipv4/icmp_echo_ignore_all 
+echo "0" > /proc/sys/net/ipv4/icmp_echo_ignore_all 
+lsmod 
+cd /lib/modules
+ls -la
+cd 5.14.0-412.el9.x86_64
+ls -la
+find . -type f -name "*.ko*"
+find . -type f -name "*.ko*" | grep vxnet3
+find . -type f -name "*.ko*" | grep e1000
+insmod -h
+insmod --help
+man insmod
+lsmod | gre e1000
+lsmod | grep e1000
+modprobe dm_crypt
+lsmod | grep crypt
+modprobe -d dm_crypt
+modprobe -r d,_crypt
+modprobe -r d_crypt
+modprobe -r dm_crypt
+lsmod | grep crypt
+cd ..
+ls -la
+ls
+for i in ls; do echo$i ;done
+for i in ls; do echo $i ;done
+for i in `ls`; do echo $i ;done
+for i in `ls`; do find $i -type f -name "*.ko*" | wc -l ;done
+for i in `ls`; do echo -n "Liczba modulów - $i"; find $i -type f -name "*.ko*" | wc -l ;done
+for i in `ls`; do echo -n "Liczba modulów - $i: "; find $i -type f -name "*.ko*" | wc -l ;done
+vi /etc/systemd/journald.conf 
+systemd-analyze 
+systemd-analyze blame
+journalctl 
+journalctl --since "-10min"
+journalctl --since "-1h"
+journalctl --since "-1h" > /tmp/mylog
+vi /tmp/mylog
+journalctl -b
+journalctl -u crond
+journalctl -u sshd
+journalctl -p err
+journalctl -f
+journalctl --since=today
+journalctl -o verbose /usr/sbin/chronyd 
+journalctl _SYSTEMD_UNIT=chronyd.service
+cd
+cd /run/log/journal/
+ls -la
+cd 13b58c66f2c344ffa21725d154e6c6da
+ls -la
+file system.journal
+cd 
+mkdir /var/log/journal
+vi /etc/systemd/journald.conf 
+systemctl restart systemd-journald
+ls -la /var/log/journal
+history
+history | awk '$1 > 64' | cut -c 8- >> lin2_Apr2024/day4-history.txt 
