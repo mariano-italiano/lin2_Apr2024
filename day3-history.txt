@@ -789,3 +789,20 @@ sudo setfacl -k -R projekty/
 ls -la projekty/
 sudo setfacl -b -R projekty/
 ls -la projekty/
+sudo vi /etc/ssh/sshd_config
+sudo vi /etc/pam.d/sshd 
+sudo vi /etc/security/time.conf 
+sudo less /var/log/secure 
+sudo vi /etc/security/time.conf 
+sudo dnf install authselect-compat
+authconfig --enablefaillock --faillockargs="deny=3 unlock_time=60 even_deny_root" --update
+sudo authconfig --enablefaillock --faillockargs="deny=3 unlock_time=60 even_deny_root" --update
+vi /etc/pam.d/system-auth 
+vi /etc/pam.d/password-auth 
+sudo tail -f /var/log/secure 
+sudo faillock --user janek
+sudo tail -f /var/log/secure 
+sudo faillock --user janek --reset
+history
+vi .bash_history 
+history | awk '$1 >  1000'| cut -c 8- >> lin2_Apr2024/day3-history.txt 
