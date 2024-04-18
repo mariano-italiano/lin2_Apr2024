@@ -105,3 +105,77 @@ systemctl restart systemd-journald
 ls -la /var/log/journal
 history
 history | awk '$1 > 64' | cut -c 8- >> lin2_Apr2024/day4-history.txt 
+ls -la /var/log/journal/
+ls -la /run/log/journal/
+reboot
+ls -la /run/log/journal/
+ls -la /var/log/journal/
+journalctl 
+cd /var/log/
+ls -la
+cd
+vi /etc/logrotate.conf 
+vi /etc/logrotate.d/sshd
+systemctl restart logrotate.service 
+vi /etc/ssh/sshd_config
+systemctl restart sshd
+ls -la /var/log/
+vi /etc/ssh/sshd_config
+systemctl restart sshd
+ls -la /var/log
+vi /etc/rsyslog.conf 
+vi /etc/ssh/sshd_config
+vi /etc/rsyslog.d/sshd.conf
+systemctl restart rsyslog.service 
+vi /etc/ssh/sshd_config
+systemctl restart sshd
+ls -la /var/log/sshd.log 
+cat /var/log/sshd.log
+less /var/log/sshd.log
+ls -la /var/log/sshd.log
+ls -la /var/log/sshd.log -h
+vi /etc/logrotate.d/sshd 
+logrotate -d /etc/logrotate.d/sshd
+logrotate -f /etc/logrotate.d/sshd
+ls -la /var/log
+vi /etc/rsyslog.conf 
+systemctl restart rsyslog.service 
+vi /etc/rsyslog.d/00-filter-host.conf
+vi /etc/rsyslog.d/01-filter-host.conf
+vi /etc/rsyslog.conf 
+vi /etc/rsyslog.d/01-filter-host.conf
+systemctl restart rsyslog.service 
+cd /var/log
+ls -la
+less centos8.log
+ls -la centos
+ls -la centos9/
+ls -la
+ls -la centos9/
+mkdir /root/lin2_Apr2024/rsyslog
+cp -rp /etc/rsyslog.d/* /root/lin2_Apr2024/rsyslog/
+ls -la /root/lin2_Apr2024/rsyslog/
+hostnamectl 
+hostnamectl -h
+hostnamectl hostname newHostname
+hostnamectl 
+hostnamectl hostname centos9
+cd
+ip a s
+ip address show 
+ip a
+ifconfig 
+ip a a 10.10.10.90/24 dev ens33
+ip a
+ping 10.10.10.90
+ip a
+ifconfig 
+nmcli connection down ens33 ; nmcli connection up ens33 
+ip a 
+ip route add 172.16.0.0/24 via 192.168.1.70
+ip route show
+route -n
+nmcli connection down ens33 ; nmcli connection up ens33 
+route -n
+history
+history | awk '$1 > 146' | cut -c 8- >> lin2_Apr2024/day4-history.txt 
