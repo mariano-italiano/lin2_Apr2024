@@ -1,0 +1,33 @@
+ulimit -Sa
+ulimit -u 15
+su - student
+ulimit -f 50
+ulimit -Sa
+su - student
+ls -la
+fallocate -l 1M
+fallocate -l 1M test.plik
+ls -la test.plik
+fallocate -l 50K test.plik
+fallocate -l 51K test.plik
+ls -la test.plik
+vi skrypt.sh
+chmod +x skrypt.sh
+./skrypt.sh &
+ps -ef | grep skrypt
+tail -f /tmp/data.log
+kill -15 2394
+ps -ef | grep skrypt
+vi skrypt.sh
+./skrypt.sh &
+tail -f /tmp/data.log
+ps -ef | grep skrypt
+ps -elf | grep skrypt
+kill -15 2423
+nice -n -10 ./skrypt.sh
+nice -n -10 ./skrypt.sh &
+ps -elf | grep skrypt
+renice +50 2438
+ps -ef | hrep skry
+ps -elf | grep skrypt
+
