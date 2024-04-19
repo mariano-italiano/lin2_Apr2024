@@ -206,3 +206,175 @@ pwd
 git status
 history
 history | awk '$1 > 245' | cut -c 8- >> day5-history.txt 
+getenforce 
+sestatus
+vi /etc/selinux/config 
+reboot 
+nmcli connection show 
+nmcli connection down ens33 
+nmcli connection up DMZ 
+nmcli connection show
+ip a s
+nmcli connection down DZM;; nmcli connection up ens33 
+nmcli connection down DZM; nmcli connection up ens33 
+ip a s
+iptables -L -v -n
+iptables -P OUTPUT DROP
+ping 192.168.1.1
+ping localhost
+iptables -A INPUT -i lo -j ACCEPT 
+iptables -A OUPUT -o lo -j ACCEPT 
+iptables -A OUTPUT -o lo -j ACCEPT 
+ping localhost
+iptables -L -v -n
+iptables -A INPUT -p tcp --dport 22 -j ACCEPT 
+iptables -L -v -n
+iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT 
+iptables -L -v -n
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT 
+vi /etc/hosts
+iptabless -A INPUT -p icmp -j ACCEPT
+iptables -A INPUT -p icmp -j ACCEPT
+iptables -A OUTPUT -p icmp -j ACCEPT
+ping 192.168.1.81
+nslookup google.com
+nslookup centos9
+nslookup centos9.lab.local
+vi /etc/resolv.conf 
+nmcli connection down ens33 ; nmcli connection up ens33 
+vi /etc/resolv.conf 
+ping wp.pl
+iptables -I OUTPUT 2 -p tcp --dport 53 -j ACCEPT 
+iptables -I OUTPUT 2 -p udp --dport 53 -j ACCEPT 
+ping wp.pl
+ping github.cpm
+ping github.com
+iptables -A OUTPUT -p icmp -d 140.82.121.4 -j REJECT 
+ping github.com
+iptables -L -v -n
+iptables -I INPUT 4 -p tcp --dport 443 -j ACCEPT 
+vi /etc/sysconfig/iptables
+iptables-save > /etc/sysconfig/iptables
+vi /etc/sysconfig/iptables
+iptables-save > /etc/sysconfig/iptables
+vi /etc/sysconfig/iptables
+iptables-restore < /etc/sysconfig/iptables
+iptables -L -v -n
+ping wp.pl
+ping github.com
+history
+history | cut -c 8-
+212.77.98.9q
+systemctl stop iptables.service 
+systemctl status firewalld.service 
+systemctl status iptables.service 
+ping wp.pl
+systemctl stop ipa.service 
+getenforce 
+sestatus
+dnf install setroubleshoot-server
+dnf provides \*sealert
+semanage -help
+semanage -h
+semanage fcontext -a
+semanage fcontext -l
+semanage port -l
+getsebool -a
+vi /etc/ssh/sshd_config
+systemctl restart sshd
+systemctl status /etc/ssh/sshd_config
+systemctl status sshd
+semanage port -l | grep ssh
+semanage port -a -t ssh_port_t -p tcp 2222
+semanage port -l | grep ssh
+systemctl restart sshd
+systemctl status sshd
+dnf group install "Basic Web Server"
+dnf install mod_ssl elinks lynx
+vi /etc/hosts
+vi /etc/httpd/conf/httpd.conf 
+vi /etc/httpd/conf.d/app1.conf
+mkdir /web/docs
+mkdir -p /web/docs
+vi /web/docs/index.html
+systemctl restart httpd
+systemctl status httpd
+vi /etc/httpd/conf/httpd.conf
+systemctl restart httpd
+systemctl status httpd
+less /var/log/messages 
+cd /var/log/mes
+cd /var/log/centos9/
+ls -la
+vi /etc/rsyslog.d/00-filter-host.conf 
+vi /etc/rsyslog.d/01-filter-host.conf 
+rm /etc/rsyslog.d/01-filter-host.conf
+vi /etc/rsyslog.
+vi /etc/rsyslog.conf 
+systemctl restart rsyslog.service 
+less /var/log/messages 
+systemctl restart httpd
+cd 
+less /var/log/messages 
+less /var/log/audit/audit.log 
+less /var/log/messages 
+cd /var/log
+ls -la
+less secure 
+less httpd/access_log 
+less httpd/error_log 
+dnf install policycoreutils-devel policycoreutils-python
+dnf install policycoreutils-devel policycoreutils
+systemctl restart httpd
+curl -v http://app1.lab.local
+less /var/log/messages 
+sealert -l 48adb0fd-bb67-425b-8112-d1ba517849f3
+ls -laZ /var/www/html/
+semanage fcontext -a -t httpd_sys_content_t "/web/docs(/.*)?"
+semanage fcontext -l | grep web/docs
+semanage fcontext -l | grep var/www/html
+ls -laZ /web/docs
+restorecon -Rv /web/docs
+ls -laZ /web/docs
+less audit/audit.log 
+cat audit/audit.log | grep app1
+cat audit/audit.log | grep index.html
+journalctl -t setroubleshoot 
+cd
+dnf install mariadb-server -y
+mkdir /mariadb
+vi /etc/my.cnf.d/mariadb-server.cnf 
+systemctl status mariadb
+systemctl start mariadb
+systemctl status mariadb
+vi /etc/my.cnf.d/mariadb-server.cnf 
+ls -la /var/lib/mysql/
+ls -la /mariadb/
+chown mysql:mysql -R /mariadb/
+systemctl start mariadb
+systemctl status mariadb
+less /var/log/audit/audit.log 
+cat /var/log/audit/audit.log | grep avc
+ls -laZ /var/lib/mysql/
+ls -laZ /mariadb/
+journalctl -t setroubleshoot 
+ls -laZ /var/lib/mysql/
+semanage fcontext -a -t mysqld_db_t "/mariadb(/.*)?"
+restorecon -Rv /mariadb/
+systemctl start mariadb
+systemctl status mariadb
+less /var/log/messages 
+cat /var/log/messages | grep -i sealert
+sealert -l d0d6f2dd-ccc4-4c90-91d0-b3df3128cc5f
+ssh-keygen -h
+ssh-keygen --help
+ssh-keygen -t dsa
+ssh-copy-id centos8-server
+ssh-copy-id root@192.168.1.81
+ssh-copy-id 192.168.1.81
+ssh '192.168.1.81'
+ssh-keygen
+ssh-copy-id 
+ssh-copy-id 192.168.1.81
+history
+history | awk '$1 > 467' | cut -c 8- >> lin2_Apr2024/day5-history.txt
