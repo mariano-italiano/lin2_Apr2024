@@ -108,3 +108,101 @@ cd
 cd lin2_Apr2024/
 history
 history | awk '$1 > 231' | cut -c 8- >> day5-history.txt
+mkdir -p /nfs-share/{Development,Production}
+chgrp student /nfs-share/ -R
+ls -la /nfs-share/
+chmod 770 /nfs-share/Development/
+chmod 740 /nfs-share/Production/
+dns install nfs-utils -y
+dnf install nfs-utils -y
+systemctl status nfs-server.service 
+systemctl start nfs-server.service 
+systemctl status nfs-server.service 
+cat /etc/services | grep nfs
+cat /etc/services | grep mount
+cat /etc/services | grep nfs -i
+cat /etc/services | grep -e "Network File System" -e "NFS"
+cat /etc/services | grep -e "Samba" -e "CIFS"
+cat /etc/services | grep ssh
+vi /etc/nfs.conf 
+systemctl restart nfs-server.service 
+vi /etc/exports
+exportfs -rav
+showmount -e localhost
+id student
+ls -la /nfs-share/
+systemctl stastus rpcbind
+systemctl status rpcbind
+systemctl status nfs-server
+systemctl status firewalld.service 
+systemctl status iptables.service 
+chmod 777 /nfs-share/ -R
+exportfs -rav
+cd /nfs-share/Development/
+ls -la
+useradd -u 1001 olek
+ls -la
+id kasia
+useradd kasia
+id kasia
+ls -la
+vi /etc/resolv.conf 
+ls -la
+nmcli connection down  ens33 ; nmcli connection up  ens33 
+nslookup centos9.lab.local
+kinit admin
+klist
+ipa-getkeytab -p nfs/centos9.lab.local@LAB.LOCAL -k /etc/krb5.keytab 
+klist -k
+cd
+mkdir /secure-share
+chmod 777 /secure-share/
+vi /etc/exports
+exportfs -rav
+showmount -e localhost
+vi /etc/exports
+showmount -e localhost
+exportf -rav
+exportfs -rav
+vi /etc/exports
+exportfs -rav
+dnf install samba samba-client samba-common
+vi /etc/resolv.conf 
+dnf install samba samba-client samba-common
+systemctl status smb
+systemctl start smb
+systemctl status smb
+groupadd devops
+useradd alicja
+useradd linda
+usermod -aG devops alicja
+mkdir /devops
+chmod 2770 /devops/
+chgrp devops devops
+chgrp devops /devops
+chown linda /devops/
+ls -la /devops/
+mkdir /smb-public
+chown student:student /smb-public
+vi /etc/samba/smb.conf
+testparm 
+systemctl restart smb
+smbpasswd -a linda
+smbpasswd -a alicja
+smbpasswd -a student
+smbstatus 
+ls -la /dev
+ls -la /devops
+smbstatus 
+ls -la /cm
+ls -la /smb-public/
+smbstatus 
+cd /var/log/samba/
+ls -la
+less log.smbd
+cd
+cd lin2_Apr2024/
+pwd
+git status
+history
+history | awk '$1 > 245' | cut -c 8- >> day5-history.txt 
