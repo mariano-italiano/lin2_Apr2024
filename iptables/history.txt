@@ -1,0 +1,53 @@
+nmcli connection show 
+nmcli connection down ens33 
+nmcli connection up DMZ 
+nmcli connection show
+ip a s
+nmcli connection down DZM;; nmcli connection up ens33 
+nmcli connection down DZM; nmcli connection up ens33 
+ip a s
+iptables -L -v -n
+iptables -P OUTPUT DROP
+ping 192.168.1.1
+ping localhost
+iptables -A INPUT -i lo -j ACCEPT 
+iptables -A OUPUT -o lo -j ACCEPT 
+iptables -A OUTPUT -o lo -j ACCEPT 
+ping localhost
+iptables -L -v -n
+iptables -A INPUT -p tcp --dport 22 -j ACCEPT 
+iptables -L -v -n
+iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT 
+iptables -L -v -n
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT 
+vi /etc/hosts
+iptabless -A INPUT -p icmp -j ACCEPT
+iptables -A INPUT -p icmp -j ACCEPT
+iptables -A OUTPUT -p icmp -j ACCEPT
+ping 192.168.1.81
+nslookup google.com
+nslookup centos9
+nslookup centos9.lab.local
+vi /etc/resolv.conf 
+nmcli connection down ens33 ; nmcli connection up ens33 
+vi /etc/resolv.conf 
+ping wp.pl
+iptables -I OUTPUT 2 -p tcp --dport 53 -j ACCEPT 
+iptables -I OUTPUT 2 -p udp --dport 53 -j ACCEPT 
+ping wp.pl
+ping github.cpm
+ping github.com
+iptables -A OUTPUT -p icmp -d 140.82.121.4 -j REJECT 
+ping github.com
+iptables -L -v -n
+iptables -I INPUT 4 -p tcp --dport 443 -j ACCEPT 
+vi /etc/sysconfig/iptables
+iptables-save > /etc/sysconfig/iptables
+vi /etc/sysconfig/iptables
+iptables-save > /etc/sysconfig/iptables
+vi /etc/sysconfig/iptables
+iptables-restore < /etc/sysconfig/iptables
+iptables -L -v -n
+ping wp.pl
+ping github.com
+

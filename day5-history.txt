@@ -1,0 +1,110 @@
+route -n
+nmcli connection show 
+nmcli device status
+nmcli device show
+nmcli device show ens33 
+nmcli connection add 
+nmcli connection add type ethernet 
+nmcli connection show
+nmcli connection delete d0b18e6b-f34e-43c0-823f-62a91c937e67
+nmcli connection add type ethernet con-name DMZ ifname ens33 ipv4.addresses 192.168.1.190/24 gw4 192.168.1.1
+nmcli connection show
+vi /etc/udev/rules.d/
+ip a 
+nmcli connection show
+nmcli connection modify DMZ ifname ens37
+nmcli connection show 
+ip a
+nmcli connection edit DMZ 
+nmcli connection show DMZ
+nmcli connection edit DMZ 
+nmcli connection show DMZ
+nmcli connection down DMZ ; nmcli connection up DMZ 
+nmcli connection show DMZ
+ip a
+ls -la 
+cat .nmcli-history
+find / -name .nmcli-history
+nmtui
+nmtui-edit 
+nmcli connection down DMZ ; nmcli connection up DMZ 
+ip a 
+nmtui-edit 
+nmcli connection show DMZ 
+vi /etc/nsswitch.conf
+vi /etc/hosts
+ping wp.pl
+vi /etc/nsswitch.conf
+ping wp.pl
+nmcli connection down DMZ
+ping wp.pl
+nmcli connection show
+ip a
+nmtui-edit 
+nslookup wp.pl
+nmcli connection show ens
+nmcli connection show ens33 
+nmcli connection down ens33 ; nmcli connection up ens33 
+ping w.pl
+ping wp.pl
+vi /etc/nsswitch.conf
+nmtui-edit 
+ping wp.pl
+vi /etc/resolv.conf 
+nmtui-edit 
+nmcli connection down ens33 ; nmcli connection up  ens33 
+ping wp.pl
+vi /etc/hosts
+ping wp.pl
+nmtui-edit 
+nmcli connection down ens33 ; nmcli connection up  ens33 
+ping wp.pl
+nmtui-edit 
+nmcli connection down ens33 ; nmcli connection up  ens33 
+vi /etc/resolv.conf 
+ping wp.pl
+iptables -L -v -n
+systemctl status firewalld.service 
+systemctl start firewalld.service 
+systemctl status firewalld.service 
+firewall-cmd --list-all
+firewall-cmd --get-zones
+firewall-cmd --list-all --zone=home
+firewall-cmd --list-all --zone=work
+firewall-cmd --add-service=freeipa-ldap --permanent
+firewall-cmd --add-service=freeipa-ldaps --permanent
+firewall-cmd --list-all
+firewall-cmd --reload
+firewall-cmd --list-all
+firewall-cmd --add-service=dns --permanent 
+firewall-cmd --add-service=ldap --permanent 
+firewall-cmd --add-service=ldaps --permanent 
+firewall-cmd --add-service=kerberos --permanent 
+firewall-cmd --reload
+firewall-cmd --list-all
+firewall-cmd --add-port=443/tcp
+firewall-cmd --list-all
+firewall-cmd --reload
+firewall-cmd --list-all
+firewall-cmd --add-port=443/tcp --permanent
+firewall-cmd --reload
+cd /usr/lib/firewalld/
+ls -la
+ls -la zones/
+vi zones/dmz.xml 
+vi services/kerberos.xml 
+firewall-cmd --new-zone servers --permanent
+firewall-cmd --reload
+firewall-cmd --get-zones
+firewall-cmd --list-all servers
+firewall-cmd --list-all --zone=servers
+firewall-cmd --add-service=https --zone servers --permanent 
+firewall-cmd --add-port=88/tmp --zone servers  --permanent 
+firewall-cmd --add-port=88/tcp --zone servers  --permanent 
+firewall-cmd --reload
+firewall-cmd --list-all servers
+firewall-cmd --list-all --zone=servers
+cd 
+cd lin2_Apr2024/
+history
+history | awk '$1 > 231' | cut -c 8- >> day5-history.txt
